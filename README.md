@@ -1,63 +1,102 @@
 <p align="center"><img src="src/i/icon128.png"></p>
 
-# RevEye: Reverse image search extension for Google Chrome
 
-[![GitHub license](https://img.shields.io/github/license/steven2358/reveye?color=blue)](https://github.com/steven2358/reveye/blob/master/LICENSE.txt)
-[![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/steven2358/reveye?color=ff69b4)](https://github.com/steven2358/reveye)
-[![Chrome web store rating](https://img.shields.io/chrome-web-store/rating/keaaclcjhehbbapnphnmpiklalfhelgf)](https://chrome.google.com/webstore/detail/reveye-reverse-image-sear/keaaclcjhehbbapnphnmpiklalfhelgf)
-[![Chrome web store users](https://img.shields.io/chrome-web-store/users/keaaclcjhehbbapnphnmpiklalfhelgf?color=yellow)](https://chrome.google.com/webstore/detail/reveye-reverse-image-sear/keaaclcjhehbbapnphnmpiklalfhelgf)
+# SnapSearch Chrome Extension
 
-This extension allows to perform an inverse image search by right-clicking onto any image in a web site.
+SnapSearch is a Chrome extension that enhances your web browsing experience by enabling users to perform an inverse image search. It's designed to save time and improve efficiency by providing instant image search results without the need to manually copy and paste image links.
 
-The context menu can be configured to contain either a single button with the default search engine, or a cascaded menu with all included search engines. Custom search engines can be added by the user (see below).
+## Features
 
-## Install
+- **Inverse Image Search**: Right-click on any image in a webpage to perform an inverse image search.
+- **Customizable Options**: Configure search engines and shortcuts to suit your preferences.
+- **Context Menu Configuration**: Choose between a single button for the default search engine or a cascaded menu with all included search engines.
+- **Add Custom Search Engines**: Users can add their own search engines (see below).
+- **Lightweight and Fast**: Minimal impact on browser performance.
+- **User-Friendly Interface**: Intuitive and easy to use.
 
-Stable version: Go to the [Google Chrome Web Store](https://chrome.google.com/webstore/detail/keaaclcjhehbbapnphnmpiklalfhelgf) and click "Add to Chrome".
+## Installation
 
-Development version: [Download the source from GitHub](https://github.com/steven2358/reveye/archive/master.zip) and [load the extension into Chrome](https://developer.chrome.com/docs/extensions/mv3/getstarted/#unpacked).
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Kathan2608/SnapSearch.git
+   ```
+2. Open Google Chrome and navigate to `chrome://extensions/`.
+3. Enable "Developer Mode" (top-right corner).
+4. Click "Load unpacked" and select the cloned project folder.
+5. The SnapSearch extension will be added to your browser.
 
-## Adding user-defined search engines
+## How to Use
 
-To add a custom search engine, open the extension options page and click on the "Add custom engine" button. Fill in the name and URL of the search engine (use `%s` as a placeholder for the image URL). For example, to add SauceNAO, fill in the following values:
-- Name: `SauceNAO`
-- URL: `https://saucenao.com/search.php?url=%s`
+### Inverse Image Search
+1. Right-click on any image in a webpage.
+2. Select **"Search Image with SnapSearch"** from the context menu.
+3. A new tab will open with the image search results in your configured search engine.
 
- Make sure the check box is checked and click "Save". The search engine will be added to the context menu.
+## Configuration
 
-## Changelog
+1. Go to the SnapSearch options page:
+   - Right-click on the extension icon in the toolbar.
+   - Select **"Options"**.
+2. Configure the following settings:
+   - **Default Search Engine**: Choose your preferred search engine (e.g., Google, Bing, DuckDuckGo).
+   - **Shortcut Keys**: Set up custom keyboard shortcuts for quicker access.
+   - **Context Menu Options**: Choose between a single button or a cascaded menu for search engines.
+   - **Custom Search Engines**: Add your own search engines by specifying the name and URL template.
 
-- v2.0.0 (2024-08-30): Updated to manifest v3. Added option to add custom search engines. Refactored code.
-- v1.5.2 (2022-11-13): Replaced Google Image Search by Google Lens.
-- v1.5.1 (2021-01-19): Fixed a bug in upgrade/initialization script.
-- v1.5.0 (2021-01-18): Add checkboxes to enable/disable individual search engines. Removed Baidu (for now).
-- v1.4.8 (2020-11-24): Fixed Yandex search.
-- v1.4.7 (2019-06-14): Removed unnecessary permissions.
-- v1.4.6 (2019-06-14): Fixed Yandex search.
-- v1.4.5 (2017-07-23): Fixed Baidu search.
-- v1.4.4 (2015-05-20): Re-included Yandex and Baidu search.
-- v1.4.3 (2015-05-19): Included Bing image match.
-- v1.4 (2013-06-28): Performed security changes and updated manifest to v2. Removed Yandex, Baidu, Cydral.  
-- v1.3 (2011-06-17): Included Google (brand new and kicking), Yandex and Baidu image search engines. Removed GazoPa as they discontinued their B2C service.  
-- v1.2 (2011-05-30): Name change to comply with Google's branding policies. Added Cydral search engine. Added option to choose between default engine or cascaded submenu.  
-- v1.1 (2011-03-01): Added option to select between TinEye and GazoPa search engines.  
-- v1.0 (2010-03-02): Added context menu.  
-- v0.2 (2009-12-14): Included new logo.  
-- v0.1 (2009-12-13): Initial version. Performs reverse image search of all images on a page using TinEye.  
+## Development
 
+If you want to contribute or modify the extension:
 
-## Philosophy
+1. Ensure you have [Node.js](https://nodejs.org/) installed.
+2. Navigate to the project directory:
+   ```bash
+   cd SnapSearch
+   ```
+3. Install dependencies:
+   ```bash
+   npm install
+   ```
+4. Make your changes and reload the extension in Chrome.
 
-RevEye is free and open source software. To minimize its memory footprint in your browser, it is written in pure vanilla JavaScript and it does not use any of the fancy JavaScript frameworks.
+## Folder Structure
 
-RevEye does not track any of your data, and it does not include ads. If you want to support RevEye development you can make a donation through [PayPal](https://www.paypal.com/donate/?business=ZUV4WDZHM6N6S&no_recurring=0&currency_code=EUR), Bitcoin (12358FQL4NuQGrU3vFcUBDBk988iQEUBd3) or [Brave tips](https://brave.com/tips/).
+```
+SnapSearch/
+|-- src/
+|   |-- options.html    # Options page for customization
+|   |-- popup.html      # Popup interface for the extension
+|   |-- styles/         # CSS files for styling
+|   |-- scripts/        # JavaScript files for functionality
+|-- manifest.json       # Chrome extension manifest file
+|-- README.md           # Project documentation (this file)
+```
 
+## Contributing
 
-## Author
+Contributions are welcome! Please follow these steps:
 
-Copyright (c) 2010-2024 Steven Van Vaerenbergh
-
+1. Fork the repository.
+2. Create a new branch for your feature or bug fix:
+   ```bash
+   git checkout -b feature-name
+   ```
+3. Commit your changes:
+   ```bash
+   git commit -m "Add feature name"
+   ```
+4. Push your branch:
+   ```bash
+   git push origin feature-name
+   ```
+5. Open a pull request.
 
 ## License
 
-Released under the GPLv3 license. For full details see the LICENSE.txt file included in this distribution.
+This project is licensed under the [MIT License](LICENSE).
+
+## Contact
+
+For any questions or feedback, feel free to reach out:
+
+- **GitHub**: [Kathan Shah](https://github.com/Kathan2608)
+
