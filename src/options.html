@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SnapSearch - Reverse Image Search - Options</title>
+  <style>
+    body { width: 500px; margin: 15px auto; padding: 20px; font-family: Arial, sans-serif; font-size: 14px; }
+    .search-engine { margin-bottom: 10px; display: flex; align-items: center; }
+    .search-engine input[type="text"] { margin-right: 5px; }
+    .search-engine input[type="text"].engine-name { width: 100px; }
+    .search-engine input[type="text"].engine-url { width: 250px; }
+    button { margin-top: 10px; }
+    .remove-engine {margin-top: -1px; }
+    #status { margin: 10px 0; }
+    #footer { font-size: 80%; margin-top: 30px; }
+  </style>
+</head>
+<body>
+  <div id="header">
+    <img src="i/icon128.png">
+    <h1>SnapSearch options</h1>
+    </div>
+
+  <h3>Select search engines in context menu:</h3>
+
+  <div id="searchEngines"></div>
+  <button id="addCustomEngine">Add custom engine</button><br>
+  <button id="save">Save</button>
+  <p id="status"></p>
+
+ <!--<p id="footer">RevEye v2.0.0. Copyright &copy; 2010-2024 <a href="https://github.com/steven2358" target="_blank">steven2358</a>. <a href="https://github.com/steven2358/reveye" target="_blank">Source code.</a></p>--> 
+
+  <script src="options.js"></script>
+</body>
+</html>
